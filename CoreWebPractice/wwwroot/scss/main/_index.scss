@@ -1,0 +1,78 @@
+﻿@import "theme";
+.index-page {
+    text-align: center;
+    padding: 60px 0;
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+
+    .text {
+        display: inline-block;
+        margin-bottom: 20px;
+        text-align: left;
+
+        span {
+            color: $sub_color;
+            font-weight: bold;
+            font-size: 2em;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        div {
+            margin-bottom: 60px;
+        }
+    }
+
+    img {
+        display: block;
+        width: 90%;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+
+        .card {
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            /*border: 1px solid $main_color;*/
+            border-radius: .25rem;
+
+            .card-body {
+                -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+                padding: 1.25rem;
+
+                .card-body-icon {
+                    color: #f4f3ef;
+                    position: absolute;
+                    z-index: 0;
+                    top: -20px;
+                    right: -15px;
+                    font-size: 4rem;
+                    -webkit-transform: rotate(15deg);
+                    -ms-transform: rotate(15deg);
+                    transform: rotate(15deg);
+                }
+            }
+        }
+
+     
+    }
+}

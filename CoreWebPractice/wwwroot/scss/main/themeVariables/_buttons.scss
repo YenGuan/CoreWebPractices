@@ -1,0 +1,200 @@
+﻿
+@mixin btn {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 3px;
+    padding: 0 15px;
+    font-size: 16px;
+    margin: 0;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    -webkit-transition: all .3s;
+    transition: all .2s;
+    border:none;
+    color:#FFF!important;
+    font-size:0.85em;
+}
+
+.btn {
+    text-shadow: 2px 2px 3px rgba(0,0,0,.2);
+    transition: all .3s;
+    //主色按鈕
+    &.btn-01 {
+        @include btn();
+        background: #84c02a;
+        background: linear-gradient(90deg, #a9d436 0%, #84c02a 100%);
+
+
+        &:hover {
+            background: linear-gradient(90deg, #84c02a 0%, #84c02a 100%);
+        }
+    }
+    /*&.btn-01-b {
+        @include btn();
+        background-color: transparent;
+        border: 1px solid #84c02a;
+        color: #84c02a;
+    }*/
+    //刪除
+    &.btn-02 {
+        @include btn();
+        background: #ff4621;
+        background: linear-gradient(90deg, #f45353 0%, #db0f35 100%);
+
+        &:hover {
+            background: linear-gradient(90deg, #ba0b2c 0%, #db0f35 100%);
+        }
+    }
+    //通用
+    &.btn-03 {
+        @include btn();
+        background-color: #51bcda;
+
+        &:hover {
+            background-color: darken(#51bcda,10%);
+        }
+    }
+    //取消
+    &.btn-04 {
+        @include btn();
+        background-color: #888;
+
+        &:hover {
+            background-color: #666;
+        }
+    }
+    /*&.btn-05 {
+        @include btn();
+        background: linear-gradient(90deg,#2ca9e4 0%,#0f9ca2 100%);
+
+        &:hover {
+            background: linear-gradient(90deg,#0f9ca2 0%,#0f9ca2 100%);
+        }
+    }*/
+    &.btn-05 {
+        @include btn();
+        background-color: #ffa816;
+
+        &:hover {
+            background-color: darken(#ffa816,10%);
+        }
+    }
+
+    &.btn-06 {
+        @include btn();
+        background-color: #8f65cc;
+
+        &:hover {
+            background-color: darken(#8f65cc,10%);
+        }
+    }
+
+    &.btn-07 {
+        @include btn();
+        background-color: darken(#729ae4,10%);
+
+        &:hover {
+            background-color: darken(#729ae4,20%);
+        }
+    }
+
+    &.btn-08 {
+        @include btn();
+        background-color: darken(#729ae4,20%);
+
+        &:hover {
+            background-color: darken(#729ae4,25%);
+        }
+    }
+
+    &.btn-09 {
+        @include btn();
+        background-color: #226f44;
+
+        &:hover {
+            background-color: darken(#226f44,5%);
+        }
+    }
+
+    &.btn-b {
+        @include btn();
+        border: 2px solid #FFF;
+        color: #FFF;
+
+        &:hover {
+            background-color: #FFF;
+            color: #170f4a;
+        }
+    }
+
+
+    &.btn-gray {
+        @include btn();
+        background-color: #b1b1b1;
+
+        &:hover {
+            background-color: darken(#CCC, 10%);
+        }
+    }
+    /*.button-wrap {
+        display: flex;
+
+        .btn {
+            flex: 1;
+            margin-right: 5px;
+            transition: all .3s;
+            padding: 5px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.btn-01 {
+                background-color: #f93f8f;
+                color: #FFF;
+                border: 2px solid #f93f8f;
+
+                &:hover {
+                    background-color: darken( #f93f8f, 15%);
+                    border: 2px solid darken( #f93f8f, 15%);
+                }
+            }
+        }
+    }*/
+}
+
+
+
+.button-wrap {
+
+    &.flex {
+        display: flex;
+
+        .btn {
+            flex: 1;
+            margin-right: 5px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &.right {
+        text-align: right;
+    }
+
+    &.left {
+        text-align: left;
+    }
+
+    &.center {
+        text-align: center;
+    }
+
+
+    input {
+        width: auto !important;
+    }
+}

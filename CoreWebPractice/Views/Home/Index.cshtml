@@ -1,0 +1,68 @@
+﻿
+
+@{
+    ViewData["Title"] = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-content">
+    <form class="filter-block" asp-action="Index" method="get">
+
+        <div class="filter-field">
+            <span class="title">Find</span>
+            <input type="text" name="Keyword" value="@ViewBag.Keyword" placeholder="text keyword here" />
+        </div>
+        <div class="filter-field button-wrap">
+            <button class="btn btn-03"><i class="lni-search"></i></button>
+        </div>
+    </form>
+
+    <div class="table-wrap">
+        <p>
+            <a asp-action="Create" class="btn btn-03 add-btn">Create</a>
+        </p>
+
+        <table class="footable">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Desc
+                    </th>
+                    <th>
+
+                    </th>
+
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        NameA
+                    </td>
+                    <td>
+                        DescA
+                    </td>
+                    <td>
+                        <a class="btn btn-03" asp-action="Edit" asp-route-id="">Edit</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        NameB
+                    </td>
+                    <td>
+                        DescB
+                    </td>
+                    <td>
+                        <a class="btn btn-03" asp-action="Edit" asp-route-id="">Edit</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

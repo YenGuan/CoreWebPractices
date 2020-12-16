@@ -1,0 +1,313 @@
+﻿.v-type {
+
+
+    & > label {
+        display: block;
+        margin-bottom: 0;
+        font-size: 0.9em;
+        color: rgba(0,0,0,.6);
+        margin-top: 20px;
+    }
+
+
+    & > .flex {
+        display: flex;
+        margin: 0 -5px;
+
+
+        input, select {
+            flex: 1;
+            margin: 0 5px;
+        }
+    }
+
+    textarea {
+        border: 2px solid #282850;
+        padding: 5px 10px;
+        border-radius: 3px;
+        width: 100%;
+    }
+
+    input:not([type=checkbox]):not([type=radio]):not([type=button]), select {
+        border: 2px solid #282850;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        border-radius: 3px;
+        vertical-align: middle;
+        width: 100%;
+    }
+
+   
+
+    .radio-wrap {
+        display: flex;
+        border-radius: 3px;
+        border: 1px solid #282850;
+        padding: 3px;
+        border-radius: 25px;
+
+        input {
+            display: none;
+
+            &:checked + label {
+                background-color: #282850;
+                color: #FFF;
+                opacity: 1;
+                border-radius: 25px;
+            }
+        }
+
+        label {
+            flex: 1;
+            text-align: center;
+            margin-bottom: 0;
+            height: 25px;
+            line-height: 25px;
+            opacity: 0.2;
+            font-size: 0.8em;
+        }
+    }
+}
+
+.form-type-01 {
+    margin-bottom: 20px;
+
+    .title {
+        font-size: 0.8em;
+        margin-top: 20px;
+        display: block;
+    }
+
+    .flex {
+        display: flex;
+
+        input, select {
+            flex: 1;
+            margin-right: 5px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    input:not([type=checkbox]):not([type=radio]):not([type=button]), select {
+        border: 1px solid #282850;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        border-radius: 3px;
+        vertical-align: middle;
+        width: 100%;
+    }
+
+    .search-btn {
+        font-size: 0.8em;
+        margin-top: 39px;
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 3px;
+        vertical-align: middle;
+    }
+
+    .add-btn {
+        @media screen and (min-width: 768px) {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px !important;
+            display: block;
+            line-height: 50px !important;
+            padding: 0 !important;
+            border-radius: 50% !important;
+        }
+
+        @media screen and (max-width: 767px) {
+            width: 100%;
+        }
+    }
+
+    textarea {
+        border: 1px solid #282850;
+        padding: 0 10px;
+        border-radius: 3px;
+        width: 100%;
+    }
+
+
+    .check-wrap {
+        display: inline-flex;
+        border-radius: 3px;
+        border: 1px solid #282850;
+        padding: 3px;
+        border-radius: 25px;
+        flex-wrap: wrap;
+
+        input {
+            display: none;
+
+            &:checked + span {
+                background-color: #282850;
+                color: #FFF;
+                opacity: 1;
+                border-radius: 25px;
+            }
+        }
+
+        span {
+            flex: 1;
+            text-align: center;
+            margin-bottom: 0;
+            height: 25px;
+            line-height: 25px;
+            opacity: 0.2;
+            font-size: 0.8em;
+            margin-right: 2px;
+            cursor: pointer;
+            padding: 0 10px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .check-float-wrap {
+        /*border-radius: 3px;
+        border: 2px solid #282850;
+        padding: 3px;*/
+        border-radius: 3px;
+
+        &:after {
+            content: "";
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            clear: both;
+            height: 0;
+        }
+
+        input {
+            display: none;
+
+            &:checked + label {
+                background-color: #282850;
+                color: #FFF;
+                opacity: 1;
+            }
+        }
+
+        label {
+            border: 1px solid #282850;
+            border-radius: 3px;
+            float: left;
+            text-align: center;
+            margin-bottom: 0;
+            opacity: 0.2;
+            font-size: 0.8em;
+            margin-right: 2px;
+            padding: 3px 15px;
+            margin-bottom: 5px;
+            cursor: pointer;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+
+    .radio-wrap {
+        display: flex;
+        border-radius: 3px;
+        border: 1px solid #282850;
+        padding: 3px;
+        border-radius: 25px;
+
+        input {
+            display: none;
+
+            &:checked + label {
+                background-color: #282850;
+                color: #FFF;
+                opacity: 1;
+                border-radius: 25px;
+            }
+        }
+
+        label {
+            flex: 1;
+            text-align: center;
+            margin-bottom: 0;
+            height: 25px;
+            line-height: 25px;
+            opacity: 0.2;
+            font-size: 0.8em;
+        }
+    }
+}
+
+.radio-field {
+    cursor: pointer;
+
+    input {
+        display: none;
+
+        &:checked {
+            & + span {
+                opacity: 1;
+            }
+        }
+    }
+
+    span {
+        background-color: #282850;
+        opacity: 0.2;
+        width: 30px;
+        height: 30px;
+        color: #FFF;
+        line-height: 30px;
+        display: block;
+        text-align: center;
+        border-radius: 50%;
+    }
+}
+
+.radio-field-row {
+    cursor: pointer;
+    display: block;
+
+    input {
+        display: none;
+
+        &:checked {
+            & + span, & + a {
+                background-color: #282850;
+                border: 2px solid #282850;
+                color: #FFF;
+                position:relative;
+
+                &:after {
+                    content: '✔';
+                    position:absolute;
+                    left:10px;
+                    top:50%;
+                    transform:translateY(-50%);
+                }
+            }
+        }
+    }
+
+    span, a {
+        color: #282850;
+        border: 2px solid #dedede;
+        line-height: 30px;
+        display: block;
+        padding-left:40px;
+        border-radius: 3px;
+    }
+}

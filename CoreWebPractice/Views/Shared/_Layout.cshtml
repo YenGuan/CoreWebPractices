@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Core Web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GrayGrids/LineIcons/LineIcons.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/css/main.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="main-content">
+
+        <input id="menu-btn" type="checkbox" value="" />
+        <label class="toggle-btn" for="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <div class="side-menu">
+            <span class="site-name">
+                <img style="height:50px" />
+                Core Web
+            </span>
+            <a href="@Url.Action("Index","Home")">
+                <div class="icon-wrap">
+                    <i class="lni lni-home"></i>
+                </div>
+                <span>Home</span>
+            </a>
+            <a class="had-sub-menu">
+                <div class="icon-wrap">
+                    <i class='lni lni-cog'></i>
+                </div>
+                <span>
+                    Systems
+                </span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a asp-controller="AppFunctions" asp-action="Index">
+                        <span>
+                            -AppFunctions
+                        </span>
+                    </a>
+                    <a asp-controller="Roles" asp-action="Index">
+                        <span>
+                            -Roles
+                        </span>
+                    </a>
+                    <a asp-controller="Users" asp-action="Index">
+                        <span>
+                            -Users
+                        </span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="center-content">
+            <div class="header">
+                <div class="toggle-menu-size-btn">
+                    <span><i class="lni-chevron-left"></i></span>
+                </div>
+
+                <div class="page-title">
+                    <span>
+                        @ViewBag.Title
+                    </span>
+
+                </div>
+
+            </div>
+            @RenderBody()
+        </div>
+    </div>
+    <div class="footer">
+        <span>xxxx© copyright 2019</span>
+    </div>
+
+    <partial name="_ModalPartial" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+﻿@import "main/theme";
+body {
+    font-family: 'Microsoft JhengHei';
+    position: relative;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 50px;
+    background-color: $main_color;
+
+    .login-form-wrap {
+        display: flex;
+        width: 90%;
+        max-width: 960px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+
+
+        @media screen and (max-width: 767px) {
+            padding-top: 30px;
+            display: block;
+            position: unset;
+            left: unset;
+            top: unset;
+            transform: unset;
+            margin: 0 auto;
+        }
+
+        & > .text-wrap {
+            flex: 1;
+            padding: 10px 20px;
+            margin-left: 100px;
+
+            @media screen and (max-width: 767px) {
+                margin-left: 0;
+            }
+
+
+
+
+
+            h1 {
+                margin: 0;
+                color: #FFF;
+                letter-spacing: 3px;
+                margin-bottom: 40px;
+                font-weight: bold;
+
+                @media screen and (max-width: 767px) {
+                    text-align: center;
+                    font-size: 1.2em;
+                }
+
+                span {
+                    display: block;
+                    color: $sub_color;
+                }
+            }
+
+            form {
+                .input-field {
+                    margin-bottom: 10px;
+
+                    span {
+                        color: #FFF;
+                        line-height: 30px;
+                        margin-right: 10px;
+                        display: block;
+                        font-size: 0.9em;
+                        text-align: left;
+                    }
+
+                    input {
+                        width: 100%;
+                        height: 35px;
+                        line-height: 35px;
+                        border-radius: 3px;
+                        border: none;
+                        background-color: #FFF;
+                        margin-bottom: 5px;
+                        padding: 0 10px;
+                    }
+                }
+
+
+                .login-btn {
+                    display: block;
+                    border: none;
+                    background-color: $sub_color;
+                    color: #FFF;
+                    line-height: 35px;
+                    text-decoration: none;
+                    border-radius: 3px;
+                    transition: all .2s;
+                    text-align: center;
+
+                    &:hover {
+                        background-color: darken($sub_color,6%);
+                    }
+                }
+            }
+        }
+
+        & > .img-wrap {
+            flex: 1;
+
+
+            img {
+                width: 90%;
+                max-width: 350px;
+            }
+
+            @media screen and (max-width: 767px) {
+                text-align: center;
+
+                img {
+                    max-width: 200px;
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+
+
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        padding: 10px 0;
+        font-size: 13px;
+        text-align: center;
+        color: #FFF;
+        right: 20px;
+        letter-spacing: 1px;
+        z-index: 9;
+        border-top: 1px solid rgba(255,255,255,.3);
+        left: 20px;
+
+        a {
+            color: #FFF;
+        }
+    }
+}

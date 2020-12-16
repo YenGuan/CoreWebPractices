@@ -1,0 +1,36 @@
+﻿.modal-header {
+    padding:10px 15px; 
+
+}
+
+.modal-body {
+    max-height: calc(100vh - 160px);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &.fixed-body {
+        height: calc(100vh - 160px);
+    }
+}
+
+.modal-footer {
+    border-top: none;
+    padding: 10px 15px;
+
+    .btn {
+        margin-left: 10px;
+        width: 110px;
+    }
+}
+
+
+    @media (min-width: 576px) {
+        #big-modal-container, #sub-modal-container {
+
+            .modal-dialog {
+                width: 95%;
+                max-width: 1500px !important;
+            }
+        }
+    }
+
