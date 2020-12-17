@@ -1,0 +1,66 @@
+﻿@model IPagedList<CoreWebPractice.Models.Person>
+@using X.PagedList.Mvc.Core; @*import this so we get our HTML Helper*@
+@using X.PagedList; @*import this so we can cast our list to IPagedList (only necessary because ViewBag is dynamic)*@
+@using X.PagedList.Mvc.Core.Fluent
+@using X.PagedList.Web.Common
+@using X.PagedList;
+@{
+    ViewData["Title"] = "Person";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-content">
+    <form class="filter-block" asp-action="Index" method="get">
+
+        <div class="filter-field">
+            <span class="title">Find</span>
+            <input type="text" name="Keyword" value="@ViewBag.Keyword" placeholder="text keyword here" />
+        </div>
+        <div class="filter-field button-wrap">
+            <button class="btn btn-03"><i class="lni-search"></i></button>
+        </div>
+    </form>
+
+    <div class="table-wrap">
+        <p>
+            <a asp-action="Create" asp-controller="People" class="btn btn-03 add-btn" data-toggle="modal" data-target="#modal-container">Create</a>
+        </p>
+
+        <table class="footable">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(m => m.First().FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.First().LastName)
+                    </th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Any())
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(m => item.FirstName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m => item.LastName)
+                            </td>
+                            <td>
+                                <a class="btn btn-03" asp-action="Edit" asp-route-id="">Edit</a>
+                            </td>
+                        </tr>
+                    }
+
+                }
+
+            </tbody>
+        </table>
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>
+</div>
+

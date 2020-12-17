@@ -1,0 +1,73 @@
+﻿@model CoreWebPractice.Models.Person
+<div class="modal-header">
+    Create Role
+</div>
+
+<div class="modal-body">
+    <div class="form-type-01 row">
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(string.Empty, new { @class = "text-danger" })
+        <div class="col-sm-12 col-md-12">
+            <span class="title">
+                @Html.DisplayNameFor(model => model.FirstName)
+            </span>
+           <input asp-for="FirstName"/>
+            @Html.ValidationMessageFor(m => m.FirstName, null, new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-12 col-md-12">
+            <span class="title">
+                @Html.DisplayNameFor(model => model.LastName)
+            </span>
+            @Html.TextBoxFor(m => m.LastName)
+            @Html.ValidationMessageFor(m => m.LastName, null, new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-12 col-md-12">
+            <span class="title">
+                @Html.DisplayNameFor(model => model.Discriminator)
+            </span>
+            @Html.TextBoxFor(m => m.Discriminator)
+            @Html.ValidationMessageFor(m => m.Discriminator, null, new { @class = "text-danger" })
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-04" data-dismiss="modal">Close</button>
+    <button id="btnRoleCreate" type="submit" class="btn btn-03">Save</button>
+</div>
+<script>
+    $("#btnRoleCreate").click(function () {
+        //var formData = new FormData();
+        //formData.append("Name", $('#Name').val());
+        //formData.append("NormalizedName", $('#NormalizedName').val());
+        var data = { FirstName: $('#FirstName').val(), LastName: $('#LastName').val(), Discriminator: $('#Discriminator').val() }
+        
+        
+        $.ajax({
+            method: "post",
+            url: '@Url.Action("Create")',
+            contentType: 'application/json',
+            processData: false,
+            data: JSON.stringify(data),
+
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("X-CSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            },
+            success: function (response) {
+                if (isHTML(response)) {
+                    var modalcontent = $('#modal-container').find('.modal-content');
+                    modalcontent.empty();
+                    modalcontent.html(response);
+                }
+                else {
+                    window.location = response;
+                }
+            },
+            error: function (xhr, status, err) {
+                console.log(err);
+            }
+        });
+    });
+
+</script>

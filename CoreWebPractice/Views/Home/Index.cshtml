@@ -1,5 +1,10 @@
 ﻿
+@model CoreWebPractice.Models.IndexViewModel
+@using Microsoft.AspNetCore.Mvc.Localization
 
+
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 @{
     ViewData["Title"] = "Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -21,48 +26,32 @@
             <a asp-action="Create" class="btn btn-03 add-btn">Create</a>
         </p>
 
-        <table class="footable">
-            <thead>
-                <tr>
-                    <th>
-                        Name
-                    </th>
-                    <th>
-                        Desc
-                    </th>
-                    <th>
+        <h3 class="title">Languages</h3>
+        <div class="form-group">
+            <label class="col-md-12 control-label">@SharedLocalizer["ChangeLanguage"]</label>
+            <div class="col-md-12">
+                @await Html.PartialAsync("_SelectLanguagePartial")
+            </div>
+        </div>
+        <form class="form-group" asp-action="Index" asp-controller="Home" method="post">
+            <label class="col-md-12 control-label">@Html.DisplayNameFor(m => m.LangString)</label>
+            <div class="col-md-12" style="display:flex">
+                @Html.TextBoxFor(m => m.LangString, new { @class = "form-control" })
+                <button type="submit" class="btn btn-primary">Submit</button>
 
-                    </th>
-
-
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        NameA
-                    </td>
-                    <td>
-                        DescA
-                    </td>
-                    <td>
-                        <a class="btn btn-03" asp-action="Edit" asp-route-id="">Edit</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        NameB
-                    </td>
-                    <td>
-                        DescB
-                    </td>
-                    <td>
-                        <a class="btn btn-03" asp-action="Edit" asp-route-id="">Edit</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+            </div>
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(m => m.LangString, "", new { @class = "text-danger" })
+            </div>
+        </form>
+        <div class="form-group">
+            <label class="col-md-12 control-label">Controllers</label>
+            <div class="col-md-12">@ViewBag.ControllerString</div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-12 control-label">Views</label>
+            <div class="col-md-12">@Localizer["ViewExample"]</div>
+        </div>
     </div>
 </div>
 

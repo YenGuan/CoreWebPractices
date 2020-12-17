@@ -24,6 +24,15 @@
         "ASPNETCORE_ENVIRONMENT": "DevelopmentKestrel",
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation"
       }
-    } 
+    },
+    "Production": {
+      "commandName": "Project",
+      "launchBrowser": true,
+
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production",
+        "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation"
+      }
+    }
   }
 }
